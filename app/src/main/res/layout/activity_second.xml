@@ -1,50 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <LinearLayout
+    <FrameLayout
+        android:id="@+id/flNow"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:id="@+id/first_screen_info"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:layout_weight="1">
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/tvDataNow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:text="ДАТА" />
+
+        <TextView
+            android:id="@+id/tvNow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center"
+            android:layout_marginTop="40dp"
+            android:text="СЕГОДНЯ" />
+
+        <ImageView
+            android:id="@+id/ivNow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_cloud_off_black_24dp" />
+
+        <TextView
+            android:id="@+id/tvNowDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="ДЕНЬ НЕДЕЛИ" />
+    </FrameLayout>
 
     <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="34dp"
-        android:id="@+id/da_moonUpDown"
-        android:layout_below="@+id/da_sunUpDown"
-        android:layout_alignStart="@+id/da_sunUpDown" />
+        android:text="Рассвет / Закат"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/sunUpDown"
+        android:layout_weight="2"
+        android:textSize="20sp"
+        android:textAlignment="center" />
 
     <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:id="@+id/da_wind"
-        android:layout_below="@+id/da_moonUpDown"
-        android:layout_alignStart="@+id/da_moonUpDown" />
+        android:text="Восход / Заход луны"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/moonUpDown"
+        android:layout_weight="2"
+        android:textSize="20sp"
+        android:textAlignment="center" />
 
     <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/da_wind"
-        android:layout_alignStart="@+id/da_wind"
-        android:layout_marginTop="35dp"
-        android:id="@+id/da_rainAndAll" />
+        android:text="Вероятность дождя"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/chanceOfRain"
+        android:layout_weight="2"
+        android:textSize="20sp"
+        android:textAlignment="center" />
 
     <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:id="@+id/da_sunUpDown"
-        android:layout_below="@+id/first_screen_info"
-        android:layout_centerHorizontal="true" />
+        android:text="Скорость ветра"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/windSpeed"
+        android:layout_weight="2"
+        android:textSize="20sp"
+        android:textAlignment="center" />
 
-</RelativeLayout>
+
+</LinearLayout>
