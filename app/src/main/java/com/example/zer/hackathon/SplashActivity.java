@@ -11,7 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private final int SPLASH_DISPLAY_DURATION = 1000;
+    private final int SPLASH_DISPLAY_DURATION = 3000;
 
     @Override
     public void onCreate(Bundle bundle) {
