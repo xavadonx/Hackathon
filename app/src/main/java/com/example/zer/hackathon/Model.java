@@ -1,20 +1,34 @@
 package com.example.zer.hackathon;
 
+
+import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 /**
  * Created by ishtefan on 15.11.2016.
  */
 
 public class Model {
-    public String city;
+
+//    public List<String> value;
+
+
+//    public String city;
     //    температура
+    @SerializedName("temp_C")
     public int temperature;
     //    Облачно, пасмурно, возм дождь
-    public String weatherDesc;
+//    public String weatherDesc;
+
+
     //    температура как чувствуется
+    @SerializedName("FeelsLikeС")
     public int temperatureFeel;
     // давление
     public int pressure;
-
 
     //Расширенная информация
     //   рассвет
@@ -37,4 +51,23 @@ public class Model {
 
     // скорость ветра
     public int windspeedKmph;
+
+
+    class Current_condition {
+        //    температура
+        public int temp_C;
+
+        class WeatherDesc {
+            //    Облачно, пасмурно, возм дождь
+            List<String> value;
+        }
+
+        //    температура как чувствуется
+        public int FeelsLikeC;
+
+        // давление
+        public int pressure;
+    }
+
+
 }
