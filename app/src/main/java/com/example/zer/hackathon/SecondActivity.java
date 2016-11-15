@@ -15,6 +15,7 @@ public class SecondActivity extends AppCompatActivity {
     TextView moon;
     TextView wind;
     TextView rain;
+    Model model;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,36 +24,25 @@ public class SecondActivity extends AppCompatActivity {
 
         initialize();
 
+
     }
 
 
-//    public void setDetailsInfo(){
-//
-//        String sunVolume = "Восход : " + sun
-//        //Расширенная информация
-//        //   рассвет
-//        public String sunrise;
-//        //    закат
-//        public String sunset;
-//        //  восход луны
-//        public String moonrise;
-//        //    заход луны
-//        public String moonset;
-//
-//        // вероятность дождя
-//        public int chanceofrain;
-//        // вероятность снега
-//        public int chanceofsnow;
-//        // вероятность тумана
-//        public int chanceoffog;
-//        // вероятность появления солнца;
-//        public int chanceofsunshine;
-//
-//        // скорость ветра
-//        public int windspeedKmph;
-//    }
+    public void setDetailsInfo(int modelNum) {
+        model = Weathers.getInstance().get(modelNum);
+        String sunVolum = "Солнце : Восход - " + model.sunrise + " Закат - " + model.sunset;
+        String moonVolum = "Луна : Восход - " + model.moonrise + " Закат - " + model.sunset;
+        String rainVolume = "Вероятность дождя " + model.chanceofrain + " %." +
+                "Вероятность снега" + model.chanceofsnow + " %." +
+                "Вероятность тумана " + model.chanceoffog + " %." +
+                "Вероятность появлени солнца " + model.chanceofsunshine + " %";
+        String windVolume = "Скорость ветра состовляет " + model.windspeedKmph + " км/ч.";
 
-    private void setTextDetail(String sunVolume,String moonVolume,String windVolume,String rainVolume){
+        setTextDetail(sunVolum,moonVolum,windVolume,rainVolume);
+
+    }
+
+    private void setTextDetail(String sunVolume, String moonVolume, String windVolume, String rainVolume) {
         sun.setText(sunVolume);
         moon.setText(moonVolume);
         rain.setText(rainVolume);
@@ -60,9 +50,9 @@ public class SecondActivity extends AppCompatActivity {
     }
 
     private void initialize() {
-        rain = (TextView)findViewById(R.id.da_rainAndAll);
-        sun = (TextView)findViewById(R.id.da_sunUpDown);
-        wind = (TextView)findViewById(R.id.da_wind);
-        moon = (TextView)findViewById(R.id.da_moonUpDown);
+        rain = (TextView) findViewById(R.id.da_rainAndAll);
+        sun = (TextView) findViewById(R.id.da_sunUpDown);
+        wind = (TextView) findViewById(R.id.da_wind);
+        moon = (TextView) findViewById(R.id.da_moonUpDown);
     }
 }
