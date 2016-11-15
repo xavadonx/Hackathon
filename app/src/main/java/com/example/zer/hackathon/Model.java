@@ -23,6 +23,7 @@ public class Model {
     //    Облачно, пасмурно, возм дождь
 //    public String weatherDesc;
 
+
     //    температура как чувствуется
     @SerializedName("FeelsLikeС")
     public int temperatureFeel;
