@@ -3,11 +3,11 @@ package com.example.zer.hackathon;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import java.util.Calendar;
 
@@ -24,6 +24,18 @@ public class MainActivity extends AppCompatActivity {
     private FrameLayout flthird;
     private FrameLayout flfourth;
 
+    private TextView date1;
+    private TextView date2;
+    private TextView date3;
+    private TextView date4;
+    private TextView date5;
+
+    private TextView day1;
+    private TextView day2;
+    private TextView day3;
+    private TextView day4;
+    private TextView day5;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +43,21 @@ public class MainActivity extends AppCompatActivity {
 
         intiFields();
 
+        date1.setText(Calendar.getInstance().DAY_OF_MONTH + "/" + Calendar.getInstance().MONTH);
+        date2.setText((Calendar.getInstance().DAY_OF_MONTH + 1) + "/" + Calendar.getInstance().MONTH);
+        date3.setText((Calendar.getInstance().DAY_OF_MONTH + 2) + "/" + Calendar.getInstance().MONTH);
+        date4.setText((Calendar.getInstance().DAY_OF_MONTH + 3) + "/" + Calendar.getInstance().MONTH);
+        date5.setText((Calendar.getInstance().DAY_OF_MONTH + 4) + "/" + Calendar.getInstance().MONTH);
+
+        day1.setText(String.valueOf(Calendar.getInstance().DAY_OF_WEEK));
+        day2.setText(String.valueOf(Calendar.getInstance().DAY_OF_WEEK + 1));
+        day3.setText(String.valueOf(Calendar.getInstance().DAY_OF_WEEK + 2));
+        day4.setText(String.valueOf(Calendar.getInstance().DAY_OF_WEEK + 3));
+        day5.setText(String.valueOf(Calendar.getInstance().DAY_OF_WEEK + 4));
+
         checkSyncDate();
+
+
     }
 
     private void intiFields() {
@@ -40,6 +66,18 @@ public class MainActivity extends AppCompatActivity {
         flsecond = (FrameLayout) findViewById(R.id.flSecond);
         flthird = (FrameLayout) findViewById(R.id.flThird);
         flfourth = (FrameLayout) findViewById(R.id.flFourth);
+
+        date1 = (TextView) findViewById(R.id.tvDataNow);
+        date2 = (TextView) findViewById(R.id.tvSecondData);
+        date3 = (TextView) findViewById(R.id.tvThirdData);
+        date4 = (TextView) findViewById(R.id.tvFourthData);
+        date5 = (TextView) findViewById(R.id.tvFifthData);
+
+        day1 = (TextView) findViewById(R.id.tvNowDay);
+        day2 = (TextView) findViewById(R.id.tvSecondDay);
+        day3 = (TextView) findViewById(R.id.tvThirdDay);
+        day4 = (TextView) findViewById(R.id.tvFourtDay);
+        day5 = (TextView) findViewById(R.id.tvFifthDay);
 
         flnow.setOnClickListener(new View.OnClickListener() {
             @Override
