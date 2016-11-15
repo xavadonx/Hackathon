@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Hackathon</string>
+    <string name="mainCity">Город</string>
+    <string name="mainButton">Подробней</string>
+    <string name="mainTemp">Температура</string>
+    <string name="mainDescriptionW">Под.погода</string>
 </resources>
