@@ -15,7 +15,6 @@ public class Model {
     // давление
     public int pressure;
 
-
     //Расширенная информация
     //   рассвет
     public String sunrise;
