@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Calendar;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String SHAREDPREFS = "sharedprefs";
     public static final String DATE = "date";
     public static final String INDEX = "index";
+    public static final String WEATHERS = "weathers";
     public static boolean isSync = false;
 
     private FrameLayout flnow;
@@ -24,12 +26,16 @@ public class MainActivity extends AppCompatActivity {
     private FrameLayout flthird;
     private FrameLayout flfourth;
 
+    private TextView date1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         intiFields();
+
+        date1.setText(Calendar.getInstance().DAY_OF_MONTH + "/" + Calendar.getInstance().MONTH);
 
         checkSyncDate();
     }
@@ -40,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
         flsecond = (FrameLayout) findViewById(R.id.flSecond);
         flthird = (FrameLayout) findViewById(R.id.flThird);
         flfourth = (FrameLayout) findViewById(R.id.flFourth);
+
+        date1 = (TextView) findViewById(R.id.tvDataNow);
 
         flnow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +90,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
+        SharedPreferences sp = getSharedPreferences(SHAREDPREFS, Context.MODE_PRIVATE);
+        String json = sp.getString(WEATHERS, "Unknown");
+
+        if (!json.equals("Unknown") && isSync) {
+
+        } else {
+
+        }
     }
 
     private void checkSyncDate() {

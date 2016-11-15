@@ -22,7 +22,7 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        initialize();
+//        initialize();
 
 
     }
@@ -49,10 +49,10 @@ public class SecondActivity extends AppCompatActivity {
         wind.setText(windVolume);
     }
 
-    private void initialize() {
-        rain = (TextView) findViewById(R.id.da_rainAndAll);
-        sun = (TextView) findViewById(R.id.da_sunUpDown);
-        wind = (TextView) findViewById(R.id.da_wind);
-        moon = (TextView) findViewById(R.id.da_moonUpDown);
-    }
+//    private void initialize() {
+//        rain = (TextView) findViewById(R.id.da_rainAndAll);
+//        sun = (TextView) findViewById(R.id.da_sunUpDown);
+//        wind = (TextView) findViewById(R.id.da_wind);
+//        moon = (TextView) findViewById(R.id.da_moonUpDown);
+//    }
 }
